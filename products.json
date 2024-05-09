@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "name":" Burger",
+        "price": 199,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g1yFtiS1Q9ZUQW7QE30IE7av0S.svg"
+    },
+    {
+        "id": 2,
+        "name":" PizzA",
+        "price": 259,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g28HbGVVBPdcZaDINsNPTkqdJA.svg"
+    },
+    {
+        "id": 3,
+        "name":" Chicken Lollypop",
+        "price": 199,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g2ATAodziS5GByPMJ9yzV7KJDj.svg"
+    },
+    {
+        "id": 4,
+        "name":"Tandoori",
+        "price": 259,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/uploads/anon/2gBCvLXmAWFVTAoRN0DatPY9ntU.png"
+    },
+    {
+        "id": 5,
+        "name":" Fried Chicken",
+        "price": 259,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/uploads/anon/2gBE0TbXPDnFFs6DU8couMOUrLG.png"
+    },
+    {
+        "id": 6,
+        "name":" Biriyani",
+        "price": 299,
+        "image": "https://cf-vectorizer-live.s3.amazonaws.com/uploads/anon/2gBEo7LAvbTjM6RrixVFl6vxqe4.png"
+    }
+   
+
+]

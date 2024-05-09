@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Cart Section</title>
+<style>
+    #cart {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>Simple Cart Section</h1>
+<div id="products">
+    <h2>Products</h2>
+    <ul>
+        <li>Product 1 - $10 <button onclick="addToCart('Product 1', 10)">Add to Cart</button></li>
+        <li>Product 2 - $20 <button onclick="addToCart('Product 2', 20)">Add to Cart</button></li>
+        <li>Product 3 - $30 <button onclick="addToCart('Product 6', 30)">Add to Cart</button></li>
+    </ul>
+</div>
+<div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items">
+    </ul>
+    <p>Total: $<span id="total-price">0</span></p>
+</div>
+<!-- <section class="speciality" id="Speciality">
+    <div class="burger" id="burger"> 
+       <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g1yFtiS1Q9ZUQW7QE30IE7av0S.svg" alt="" height="300px" width="300px">
+       <h2 >burger  &#x20b9;:250 </h2>
+    <div class="buttons">
+        <i onclick="decrement()" class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+     </div> 
+  
+      
+      
+    </div>
+    <div class="burger" id="Pizza"> 
+      <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g28HbGVVBPdcZaDINsNPTkqdJA.svg" alt="" height="300px" width="300px">
+      <h2 >Pizza  &#x20b9;:250 </h2>
+      <div class="buttons">
+        <i class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i  onclick="increment(${id})" class="bi bi-plus-lg"></i>
+     </div> 
+   </div>
+   <div class="burger" id="Chicken"> 
+      <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g2ATAodziS5GByPMJ9yzV7KJDj.svg" alt="" height="300px" width="300px">
+      <h2 >Chicken Lollypo &#x20b9;:200</h2>
+      <div class="buttons">
+        <i class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i class="bi bi-plus-lg"></i>
+     </div> 
+   </div>
+   <div class="burger" id="fish"> 
+      <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g1yFtiS1Q9ZUQW7QE30IE7av0S.svg" alt="" height="300px" width="300px">
+      <h2 >Fish fry &#x20b9;:200</h2>
+      <div class="buttons">
+        <i class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i class="bi bi-plus-lg"></i>
+     </div> 
+   </div>
+   <div class="burger" id="chicken2"> 
+      <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g1yFtiS1Q9ZUQW7QE30IE7av0S.svg" alt="" height="300px" width="300px">
+      <h2 >Chicken Tanduri &#x20b9;:299</h2>
+      <div class="buttons">
+        <i class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i class="bi bi-plus-lg"></i>
+     </div> 
+   </div>
+   <div class="burger" id="fried"> 
+      <img  src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/anon/2g1yFtiS1Q9ZUQW7QE30IE7av0S.svg" alt="" height="300px" width="300px">
+      <h2 >fried chicke &#x20b9;:199</h2>
+      <div class="buttons">
+        <i class="bi bi-dash-lg"></i>
+        <span class="quantity">0</span>
+        <i class="bi bi-plus-lg"></i>
+     </div> 
+   </div>
+  
+   
+   </section> -->
+<script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        updateCart();
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItemsElement = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        cartItemsElement.innerHTML = '';
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - $${item.price}`;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.onclick = () => removeFromCart(index);
+            listItem.appendChild(removeButton);
+            cartItemsElement.appendChild(listItem);
+
+            totalPrice += item.price;
+        });
+
+        totalPriceElement.textContent = totalPrice;
+    }
+</script>
+</body>
+</html>
